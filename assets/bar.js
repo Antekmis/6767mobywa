@@ -14,10 +14,13 @@ var ROUTES = {
     card: 'card.html',
 };
 
+// Określamy bazowy URL
+var BASE_URL = 'https://antekmis.github.io/6767mobywa/';
+
 function sendTo(key){
     var qs = params.toString();
     var file = ROUTES[String(key)] || (String(key).endsWith('.html') ? String(key) : String(key) + '.html');
-    var href = file + (qs ? `?${qs}` : '');
+    var href = BASE_URL + file + (qs ? `?${qs}` : ''); // Dodajemy pełny URL
     location.href = href;
 }
 
@@ -43,8 +46,8 @@ function getMobileOperatingSystem() {
     }
   
     return 4;
-  }
+}
   
-  if (getMobileOperatingSystem() == 2){
-      document.querySelector(".bottom_bar").style.height = "70px"
+if (getMobileOperatingSystem() == 2){
+    document.querySelector(".bottom_bar").style.height = "70px";
 }
